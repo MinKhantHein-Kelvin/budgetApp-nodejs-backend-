@@ -3,7 +3,7 @@ const { QueryTypes } = require("sequelize");
 
 const getallCategory = async (req, res) => {
   try {
-    data = await db.sequelize.query("SELECT * FROM Category", {
+    data = await db.sequelize.query("SELECT * FROM category order by id", {
       type: QueryTypes.SELECT,
     });
     res.send(data);

@@ -3,7 +3,7 @@ const { QueryTypes } = require("sequelize");
 
 const getallExpense = async (req, res) => {
   try {
-    data = await db.sequelize.query("SELECT expense.id,category.description as category,expense.amount FROM Expense inner join category on expense.category = category.description", {
+    data = await db.sequelize.query("SELECT expense.id,category.description as category,expense.amount FROM expense inner join category on expense.category = category.description order by expense.id", {
       type: QueryTypes.SELECT,
     });
     res.send(data);

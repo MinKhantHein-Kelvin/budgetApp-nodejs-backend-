@@ -3,7 +3,7 @@ const { QueryTypes } = require("sequelize");
 
 const getallIncome = async (req, res) => {
   try {
-    data = await db.sequelize.query("SELECT income.id,category.description as category,income.amount FROM Income inner join category on income.category = category.description", {
+    data = await db.sequelize.query("SELECT income.id,category.description as category,income.amount FROM income inner join category on income.category = category.description order by income.id", {
       type: QueryTypes.SELECT,
     });
     res.send(data);
@@ -22,7 +22,7 @@ const createIncome = async (req, res) => {
       let existid = req.body.id;
       if (existid == "") {
         data = await db.sequelize.query(
-          `INSERT INTO Income(category,amount) VALUES(:category, :amount)`,
+          `INSERT INTO income(category,amount) VALUES(:category, :amount)`,
           {
             replacements: {
               category: req.body.category,
@@ -35,7 +35,7 @@ const createIncome = async (req, res) => {
         return res.send(response);
       } else {
         data = await db.sequelize.query(
-          `UPDATE Income SET category=:category, amount =:amount WHERE id=:id`,
+          `UPDATE income SET category=:category, amount =:amount WHERE id=:id`,
           {
             replacements: {
               id: existid,
@@ -60,7 +60,7 @@ const createIncome = async (req, res) => {
   const deleteIncome = async (req,res)=>{
     let response = ""
     try {
-        data = await db.sequelize.query(`DELETE FROM Income WHERE id = :id`, {
+        data = await db.sequelize.query(`DELETE FROM income WHERE id = :id`, {
             replacements: { id: req.params.id },
             type: QueryTypes.DELETE
           },

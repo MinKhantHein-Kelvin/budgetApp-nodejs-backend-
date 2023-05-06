@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "root",
-    "password": "asdfghjkl@1999#",
-    "database": "budgetapp",
-    "host": "localhost",
+    "username": "sql12616439",
+    "password": "X47kbNDgnc",
+    "database": "sql12616439",
+    "host": "sql12.freesqldatabase.com",
     "dialect": "mysql"
   },
   "test": {
