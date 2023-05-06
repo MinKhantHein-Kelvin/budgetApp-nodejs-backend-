@@ -3,7 +3,7 @@ const { QueryTypes } = require('sequelize');
 
  const getUser =async (req, res) => {
     try {
-        data = await db.sequelize.query("SELECT * FROM users", {
+        data = await db.sequelize.query("SELECT * FROM Users", {
             type: QueryTypes.SELECT
         });
         res.send(data)
