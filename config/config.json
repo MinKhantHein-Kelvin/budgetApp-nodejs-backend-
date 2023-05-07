@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "sql12616439",
-    "password": "X47kbNDgnc",
-    "database": "sql12616439",
-    "host": "sql12.freesqldatabase.com",
+    "username": "urug3ikyb3pal8tz",
+    "password": "NWTz5v8CHHjf2VzGkyK2",
+    "database": "bwx1x5fdfvycjj79bsoh",
+    "host": "bwx1x5fdfvycjj79bsoh-mysql.services.clever-cloud.com",
     "dialect": "mysql"
   },
   "test": {
